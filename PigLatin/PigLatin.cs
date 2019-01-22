@@ -6,14 +6,14 @@ namespace PigLatin
     {
         public static void Main()
         {
-            string alphabet = "abcdefghijklmnopqrstuvwxyz";
-            string firstThird = alphabet.Substring(0, 8);
-            string secondThird = alphabet.Substring(8, 8);
-            string thirdThird = alphabet.Substring(17);
+            
+            
+            System.Console.WriteLine("Translate word: ");
+            string engWord = Console.ReadLine();
+            string PigLatin = TranslateWord(engWord);
+            System.Console.WriteLine(PigLatin);
 
-            Console.WriteLine("First Third: " + firstThird);
-            Console.WriteLine("Second Third: " + secondThird);
-            Console.WriteLine("Third Third: " + thirdThird);
+            
 
             // leave this command at the end so your program does not close automatically
             Console.ReadLine();
@@ -21,8 +21,10 @@ namespace PigLatin
         
         public static string TranslateWord(string word)
         {
+            string firstLetter = word.Substring(0,1);
+            string restWord = word.Substring(1);
             // your code goes here
-            return word;
+            return restWord + firstLetter + "ay";
         }
     }
 }
