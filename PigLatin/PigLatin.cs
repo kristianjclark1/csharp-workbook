@@ -2,11 +2,11 @@
 
 namespace PigLatin
 {
-    class Program
+    public class Program
     {
         public static void Main()
         {
-
+            Console.WriteLine("fjdskjf");
             System.Console.WriteLine("Translate word: ");
             string engWord = Console.ReadLine();
             string PigLatin = TranslateWord(engWord);
