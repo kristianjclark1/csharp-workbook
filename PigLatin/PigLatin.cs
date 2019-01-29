@@ -7,11 +7,15 @@ namespace PigLatin
         public static void Main()
         {
 
-
             System.Console.WriteLine("Translate word: ");
             string engWord = Console.ReadLine();
             string PigLatin = TranslateWord(engWord);
             System.Console.WriteLine(PigLatin);
+
+
+
+
+
 
 
 
@@ -22,16 +26,24 @@ namespace PigLatin
         public static string TranslateWord(string word)
         {
 
-            string firstLetter = word.Substring(0, 1);
-            string restWord = word.Substring(1);
-            // your code goes here
-            return restWord + firstLetter + "ay";
 
-            char[] firstVowelIndex = { 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u' };
-            string firstPart = word.Substring(0, firstVowelIndex);
-            string secondPart = word.Substring(firstVowelIndex);
+            int firstVowelIndex = word.IndexOfAny(new char[] { 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u' });
+            if (firstVowelIndex == 0)
+            {
+                return word + "yay";
+            }
+            else if (firstVowelIndex != 0)
+            {
+                string firstLetter = word.Substring(0, 1);
+                string restWord = word.Substring(1);
+                // your code goes here
+                return restWord + firstLetter + "ay";
+            }
 
-            return secondPart + firstPart + "ay";
+            return word;
+
         }
     }
 }
+
+
