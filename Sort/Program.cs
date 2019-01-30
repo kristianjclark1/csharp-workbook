@@ -20,11 +20,34 @@ namespace Sort
                 else if (current > next)
                 {
                     numArray[i] = next;
+                    numArray[i + 1] = current;
 
                 }
-                System.Console.WriteLine(numArray);
 
 
+
+            }
+            for (int i = 0; i < numArray.Length - 1; i++)
+            {
+                int current = numArray[i];
+                int next = numArray[i + 1];
+                if (current < next)
+                {
+                    numArray[i] = current;
+                }
+                else if (current > next)
+                {
+                    numArray[i] = next;
+                    numArray[i + 1] = current;
+
+                }
+
+
+
+            }
+            foreach (var item in numArray)
+            {
+                System.Console.WriteLine(item.ToString());
             }
 
         }
