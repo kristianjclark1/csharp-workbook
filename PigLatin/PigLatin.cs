@@ -2,31 +2,46 @@
 
 namespace PigLatin
 {
-    class Program
+    public class Program
     {
         public static void Main()
         {
-            // your code goes here
-            string alphabet = "abcdefghijklmnopqrstuvwxyz";
-            string firstThird = alphabet.Substring(0, 8);
-            string secondThird = alphabet.Substring(8, 8);
-            string thirdThird = alphabet.Substring(17);
 
-            Console.WriteLine("First Third: " + firstThird);
-            Console.WriteLine("Second Third: " + secondThird);
-            Console.WriteLine("Third Third: " + thirdThird);
+            System.Console.WriteLine("Translate word: ");
+            string engWord = Console.ReadLine();
+            string PigLatin = TranslateWord(engWord);
+            System.Console.WriteLine(PigLatin);
 
-            
-            
+
+
+
+
+
+
 
             // leave this command at the end so your program does not close automatically
             Console.ReadLine();
         }
-        
+
         public static string TranslateWord(string word)
         {
-            // your code goes here
+
+
+            int firstVowelIndex = word.IndexOfAny(new char[] { 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u' });
+            if (firstVowelIndex == 0)
+            {
+                return word + "yay";
+            }
+            else if (firstVowelIndex != 0)
+            {
+                string firstLetter = word.Substring(0, 1);
+                string restWord = word.Substring(1);
+                // your code goes here
+                return restWord + firstLetter + "ay";
+            }
+
             return word;
+
         }
     }
 }
