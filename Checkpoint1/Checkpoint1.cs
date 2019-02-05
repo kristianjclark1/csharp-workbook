@@ -133,14 +133,9 @@ namespace Checkpoint1
             System.Console.WriteLine("Input a series of numbers separated by commas: ");
             string input = Console.ReadLine();
             char[] ch1 = { ',', ' ' };
-            do
-            {
-                ch1 = Console.ReadLine();
-                numbers.Add(ch1);
-            }
-            while (ch1 != "0");
-
+            string[] segments = input.Split(ch1);
             int number = 0;
+            int max = 0;
             foreach (string s in numbers)
             {
                 bool result = Int32.TryParse(s, out number);
@@ -149,14 +144,9 @@ namespace Checkpoint1
                     max = Math.Max(max, value);
                 }
             }
-            System.Console.WriteLine("The sum of your numbers is {0}", max);
+            System.Console.WriteLine("The max of your numbers is {0}", max);
 
-            /* while (int.TryParse(Console.ReadLine(), out value))
-            {
-                max = Math.Max(max, value);
 
-                Console.WriteLine(" highest is {0} ", max);
-            }*/
             System.Console.WriteLine();
 
 
