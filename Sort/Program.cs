@@ -6,7 +6,7 @@ namespace Sort
     {
         static void Main(string[] args)
         {
-
+            //Sorting numbers from smallest to largest//
             int[] numArray = { 23, 55, 99, 38, 65 };
 
             for (int i = 0; i < numArray.Length - 1; i++)
