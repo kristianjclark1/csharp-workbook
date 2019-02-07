@@ -5,13 +5,13 @@ namespace TextBasedGame
     class Program
     {
         public static void Main(string[] args)
-        {   
+        {
             int complete = 0;
             bool alive = true;
-            while ( alive == true)
+            while (alive == true)
             {
 
-            
+
 
                 Console.WriteLine("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
                 Console.WriteLine("Welcome to the cavern of secrets!");
@@ -123,7 +123,7 @@ namespace TextBasedGame
                         else
                         {
                             System.Console.WriteLine("You killed the spider!");
-                             complete = 1;
+                            complete = 1;
                             //return complete;
                         }
                     }
@@ -149,36 +149,38 @@ namespace TextBasedGame
                     //return complete
 
                 }
+                //The end//
                 if (complete == 1)
-                    {  Console.WriteLine("You managed to escape the cavern alive! Would you like to play again? [y/n]: ");
+                {
+                    Console.WriteLine("You managed to escape the cavern alive! Would you like to play again? [y/n]: ");
                     string choice = Console.ReadLine();
-                        if (choice == "y")
-                        {
-                            alive = true;
-                        }	
-                        else if (choice == "n")
-                        {
-                            alive = false;
-                        }
-                    }
-                    else 
+                    if (choice == "y")
                     {
+                        alive = true;
+                    }
+                    else if (choice == "n")
+                    {
+                        alive = false;
+                    }
+                }
+                else
+                {
                     Console.WriteLine("You have died! Would you like to play again? [y/n]: ");
                     string choice2 = Console.ReadLine();
-                        if (choice2 == "y")
-                        {
-                            alive = true;
-                        }
-                        else
-                        {
-                            alive = false;
-                        }
-                            
-	                }
+                    if (choice2 == "y")
+                    {
+                        alive = true;
+                    }
+                    else
+                    {
+                        alive = false;
+                    }
+
+                }
 
             }
-                
-            
+
+
 
 
 
