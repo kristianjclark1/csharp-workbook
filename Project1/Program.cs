@@ -8,76 +8,57 @@ namespace Project1
     {
         public static void Main()
         {
-            Car snowCar = new Car("white");
-            Car crashDummy = new Car("yellow");
-            crashDummy.Color = "yellow and white stripes";
-            // Person firstname = new Person("Mary", "Jones");
+            Garage smallGarage = new Garage(2);
+            Car blueCar = new Car("blue", 5);
+            Person mary = new Person("Mary");
+            Person sue = new Person("Sue");
+            blueCar.addPerson(mary, 0);
+            blueCar.addPerson(sue, 1);
+            smallGarage.ParkCar(blueCar, 0);
+            System.Console.WriteLine(smallGarage.Cars);
 
-
-            // Garage smallGarage = new Garage(2);
-
-            // smallGarage.ParkCar(snowCar, 0);
-            // Console.WriteLine(smallGarage.Cars);
         }
     }
 
-    class Car
+    public class Car
     {
-        public Car(string initialColor)
+        private Person[] people;
+        public Car(string color, int size)
         {
-            System.Console.WriteLine("Starting car constructor");
-            System.Console.WriteLine($"This car's color is {this.Color} ");
-            this.Color = initialColor;
-            System.Console.WriteLine($"This car's color is {this.Color} ");
-
-
-            System.Console.WriteLine("Ending car constructor");
-
-
+            this.Color = color;
+            this.people = new Person[size];
         }
-        private string _color;
-        public string Color
+        public string Color;
+        public void addPerson(Person person, int spot)
+        {
+            this.people[spot] = person;
+        }
+        public string Persons
         {
             get
             {
-                //constructing color//
-                System.Console.WriteLine("Starting get color");
-                System.Console.WriteLine("Ending get color");
-                return _color;
-            }
-            set
-            {
-                System.Console.WriteLine("Starting set color");
-                _color = value;
-                System.Console.WriteLine("Ending set color");
+                string peopleNames = "";
+                for (int i = 0; i < people.Length; i++)
+                {
+                    if (people[i] != null)
+                    {
+                        peopleNames += people[i].name + " ";
+                    }
+
+                }
+                return peopleNames;
             }
         }
-
-
-
-
 
 
     }
 
     public class Person
     {
-        public Person(string initialfirstName)
+        public string name { get; set; }
+        public Person(string initialName)
         {
-            this.firstname = initialfirstName;
-        }
-        private string firstname
-        {
-            get
-            {
-                return this.firstname + "  ";
-            }
-            set
-            {
-                string[] names = null;
-            }
-
-
+            this.name = initialName;
         }
     }
 
@@ -87,7 +68,6 @@ namespace Project1
 
         public Garage(int initialSize)
         {
-            Size = initialSize;
             this.cars = new Car[initialSize];
         }
 
@@ -107,12 +87,13 @@ namespace Project1
                 {
                     if (cars[i] != null)
                     {
-                        Console.WriteLine(String.Format("The {0} car is in spot {1}.", cars[i].Color, i));
+                        Console.WriteLine(String.Format("The {0} car is in spot {1} and the people in that car are: {2}.", cars[i].Color, i, cars[i].Persons));
                     }
                 }
                 return "That's all!";
             }
         }
+
     }
 }
 
