@@ -4,16 +4,17 @@ public class Program
 {
     public static void Main()
     {
-        Station star = new Station("Star");
-        Station rebel = new Station("Rebel");
+        Station deathStar = new Station("DeathStar", 2, "Imperial");
+        Station rebelSpaceStation = new Station("RebelSpaceStation", 2, "Rebel");
         Person leia = new Person("Leia", "Organa", "Rebel");
         Person luke = new Person("Luke", "Skywalker", "Rebel");
         Ship falcon = new Ship("Rebel", "Smuggling", 2);
         Ship tie = new Ship("Tie", "Fighter", 1);
-        Station smallStation = new Station(2);
+        Station smallStation = new Station("Rebel", 2, "Rebel");
         smallStation.ParkShip(tie, 0);
+        tie.addPerson(leia, 0);
         Console.WriteLine(smallStation.Roster);
-        Console.WriteLine("Hello world!");
+
     }
 }
 
@@ -78,7 +79,10 @@ class Ship
         {
             foreach (var person in passengers)
             {
-                Console.WriteLine(String.Format("{0}", person.FullName));
+                if (person != null)
+                {
+                    Console.WriteLine(String.Format("{0}", person.FullName));
+                }
             }
 
             return "That's Everybody!";
@@ -104,17 +108,18 @@ class Ship
 class Station
 {
     private Ship[] ships;
-    public Station(string initialName)
-    {
-        Name = initialName;
-    }
     public string Name { get; private set; }
-    public Station(int initialSize)
-    {
-        Size = initialSize;
-        this.ships = new Ship[initialSize];
-    }
     public int Size { get; private set; }
+    public string Alliance { get; private set; }
+
+    public Station(string initialName, int initialSize, string alliance)
+    {
+        this.Name = initialName;
+        this.ships = new Ship[initialSize];
+        this.Size = initialSize;
+        this.Alliance = alliance;
+    }
+
     public void ParkShip(Ship ship, int spot)
     {
         ships[spot] = ship;
@@ -132,7 +137,8 @@ class Station
             {
                 if (ships[i] != null)
                 {
-                    Console.WriteLine(String.Format("The {0} ship is in spot {1} ", ships[i].Type, i));
+                    Console.WriteLine(String.Format("The {0} ship is in spot {1} and the people on that ship are:", ships[i].Type, i));
+                    Console.WriteLine(ships[i].Passengers);
                 }
             }
             return "That's all!";
