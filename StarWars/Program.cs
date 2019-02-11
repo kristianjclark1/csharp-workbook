@@ -4,7 +4,6 @@ public class Program
 {
     public static void Main()
     {
-        Station deathStar = new Station("DeathStar", 2, "Imperial");
         Station rebelSpaceStation = new Station("RebelSpaceStation", 2, "Rebel");
         Person leia = new Person("Leia", "Organa", "Rebel");
         Person luke = new Person("Luke", "Skywalker", "Rebel");
