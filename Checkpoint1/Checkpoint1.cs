@@ -85,7 +85,7 @@ namespace Checkpoint1
             System.Console.WriteLine("Enter any Number");
             int userInput = int.Parse(Console.ReadLine());
             int originaluserinput = userInput;
-            for (int i = userInput; i >= 1; i--)
+            for (int i = userInput - 1; i >= 1; i--)
             {
                 userInput = userInput * i;
             }
