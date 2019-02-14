@@ -126,28 +126,22 @@ namespace Checkpoint1
         {
             System.Console.WriteLine("Problem5");
 
-            List<string> numbers = new List<string>();
-
-            int value = 0;
-
             System.Console.WriteLine("Input a series of numbers separated by commas: ");
-            string input = Console.ReadLine();
-            char[] ch1 = { ',', ' ' };
-            string[] segments = input.Split(ch1);
-            int number = 0;
-            int max = 0;
-            foreach (string s in numbers)
+            var input = Console.ReadLine();
+            var numbers = input.Split(',');
+            var max = Convert.ToInt32(numbers[0]);
+
+            foreach (var str in numbers)
             {
-                bool result = Int32.TryParse(s, out number);
-                if (result)
-                {
-                    max = Math.Max(max, value);
-                }
+                var number = Convert.ToInt32(str);
+                if (number > max)
+                    max = number;
             }
-            System.Console.WriteLine("The max of your numbers is {0}", max);
+
+            System.Console.WriteLine("Highest number is:  " + max);
 
 
-            System.Console.WriteLine();
+
 
 
         }
