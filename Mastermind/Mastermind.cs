@@ -41,6 +41,10 @@ namespace Mastermind
         public static bool CheckSolution(char[] guess)
         {
             // Your code here
+            for (int i = 10; i > 0; i--)
+            {
+
+            }
 
 
             return false;
