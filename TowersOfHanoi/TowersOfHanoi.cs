@@ -9,12 +9,15 @@ namespace TowersOfHanoi
     {
         static void Main(string[] args)
         {
-
             Game game = new Game();
             game.PrintBoard();
             game.AskMove();
             game.PrintBoard();
-            Console.WriteLine("Hello World!");
+            game.AskMove();
+
+
+
+
         }
     }
     class Block
@@ -40,6 +43,7 @@ namespace TowersOfHanoi
 
     class Game
     {
+        Block stack1 = new Block(4);
         Dictionary<string, Tower> towers = new Dictionary<string, Tower>();
         public Game()
         {
@@ -69,7 +73,7 @@ namespace TowersOfHanoi
 
         }
 
-        public bool IsLegal(Tower from, Tower to)
+        public static bool IsLegal(Tower from, Tower to)
         {
             Block popOff = from.blocks.Peek();
             Block pushOn = to.blocks.Peek();
