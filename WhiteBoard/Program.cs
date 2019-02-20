@@ -10,9 +10,12 @@ namespace WhiteBoard
             StringTransform transformedWord;
             string reversedword;
             transformedWord = new StringTransform();
-            reversedword = transformedWord.Transform("jeff");
+            reversedword = transformedWord.Transform("Jeff");
             stringUpperCase secondTransformer = new stringUpperCase();
-            var result2 = secondTransformer.Transform("jeff");
+            var result2 = secondTransformer.Transform("Jeff");
+            stringLowerCase thirdTransformer = new stringLowerCase();
+            var result3 = thirdTransformer.Transform("Jeff");
+            System.Console.WriteLine(result3);
             System.Console.WriteLine(result2);
             System.Console.WriteLine(reversedword);
 
@@ -46,6 +49,14 @@ namespace WhiteBoard
             public string Transform(string input)
             {
                 return input.ToUpper();
+            }
+        }
+
+        public class stringLowerCase : StringTransform
+        {
+            public string Transform(string input)
+            {
+                return input.ToLower();
             }
         }
 
