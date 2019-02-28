@@ -6,51 +6,31 @@ namespace Months
     {
         static void Main(string[] args)
         {
+            //Create a program that prints out the day of the week your birthday will fall on for which ever year you type in.
+            int myBirthday = 10;
+            int DayOfWeekTracker = 0;
 
+            foreach (var item in Enum.GetValues(typeof(System.DayOfWeek)))
+                foreach (var item in Enum.GetValues(typeof(MonthsOfYearWithNumbers)))
+                {
+                    var dayEnum = (DayOfWeek)item;
+                    Console.WriteLine((int)dayEnum);
+                    System.Console.WriteLine(item);
+                }
 
-
-            var point = new System.Drawing.Point(0, 0);
-            point = new System.Drawing.Point(5, 5);
-            point.X = point.X * point.X;
-            point.Y = point.Y * point.Y;
-
-            //foreach(var item in Enum.Getvalues(typeof(System.DayOfWeek)))
-            //foreach (var item in Enum.GetValues(typeof(MonthsOfYearWithNumbers)))
-            //{
-            //var monthEnum = (DayOfWeek)item;
-            //Console.WriteLine((int)monthEnum);
-            // System.Console.WriteLine(item);
-            // }
-
-            //Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!");
         }
 
-        public struct StructPoint
+
+
+        enum DayOfWeek
         {
-
-            public int y { get; set; }
-            public int X { get; set; }
-
-            public StructPoint(int x, int y)
-            {
-                this.X = x;
-                this.Y = y;
-            }
-
+            Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
         }
-        public struct ClassPoint
+
+        enum MonthsOfYearWithNumbers
         {
-            public int X { get; set; }
-            public int Y { get; set; }
+            January = 01, February = 02, March = 03, April = 04, May = 05, June = 06, July = 07, August = 08, September = 09, October = 10, November = 11, December = 12
         }
-        //enum MonthsofYear
-        //{
-        // January, February, March, April, May, June, July, August, September, October, November, December
-        // }
-
-        // enum MonthsOfYearWithNumbers
-        // {
-        //  January = 01, February = 02, March = 03, April = 04, May = 05, June = 06, July = 07, August = 08, September = 09, October = 10, November = 11, December = 12
-        //}
     }
 }
