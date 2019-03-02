@@ -7,16 +7,13 @@ namespace Months
         static void Main(string[] args)
         {
             //Create a program that prints out the day of the week your birthday will fall on for which ever year you type in.
-            int myBirthday = 10;
-            int DayOfWeekTracker = 0;
 
-            foreach (var item in Enum.GetValues(typeof(System.DayOfWeek)))
-                foreach (var item in Enum.GetValues(typeof(MonthsOfYearWithNumbers)))
-                {
-                    var dayEnum = (DayOfWeek)item;
-                    Console.WriteLine((int)dayEnum);
-                    System.Console.WriteLine(item);
-                }
+
+            //Assume the current culture is en-US
+            Console.WriteLine("Please enter the year you would like to know what day your birthday falls on");
+            string bdayYr = Console.ReadLine();
+            DateTime dt = new DateTime(Convert.ToInt32(bdayYr), 9, 10);
+            Console.WriteLine("Your birthday falls on {0} in the year {1}", dt.DayOfWeek, bdayYr);
 
             Console.WriteLine("Hello World!");
         }
