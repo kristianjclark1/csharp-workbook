@@ -1,12 +1,29 @@
 ﻿using System;
 
-namespace Sort
+namespace sort
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            int[] x = new int[] { 55, 4, 25, 5, 84, 2, 1, 3, 9 };
+            int temp = 0;
+            //looping through the array
+            for (int i = 0; i < x.Length; i++)
+            {
+                for (int j = i + 1; j < x.Length; j++)
+                {
+                    if (x[i] > x[j])
+                    {
+                        temp = x[j];
+                        x[j] = x[i];
+                        x[i] = temp;
+                    }
+                }
+                Console.WriteLine(x[i]);
+            }
+
         }
     }
 }
