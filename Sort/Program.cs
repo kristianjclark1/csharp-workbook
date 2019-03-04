@@ -1,53 +1,26 @@
 ﻿using System;
 
-namespace Sort
+namespace sort
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            //Sorting numbers from smallest to largest//
-            int[] numArray = { 23, 55, 99, 38, 65 };
 
-            for (int i = 0; i < numArray.Length - 1; i++)
+            int[] x = new int[] { 55, 4, 25, 5, 84, 2, 1, 3, 9 };
+            int temp = 0;
+            for (int i = 0; i < x.Length; i++)
             {
-                int current = numArray[i];
-                int next = numArray[i + 1];
-                if (current < next)
+                for (int j = i + 1; j < x.Length; j++)
                 {
-                    numArray[i] = current;
+                    if (x[i] > x[j])
+                    {
+                        temp = x[j];
+                        x[j] = x[i];
+                        x[i] = temp;
+                    }
                 }
-                else if (current > next)
-                {
-                    numArray[i] = next;
-                    numArray[i + 1] = current;
-
-                }
-
-
-
-            }
-            for (int i = 0; i < numArray.Length - 1; i++)
-            {
-                int current = numArray[i];
-                int next = numArray[i + 1];
-                if (current < next)
-                {
-                    numArray[i] = current;
-                }
-                else if (current > next)
-                {
-                    numArray[i] = next;
-                    numArray[i + 1] = current;
-
-                }
-
-
-
-            }
-            foreach (var item in numArray)
-            {
-                System.Console.WriteLine(item.ToString());
+                Console.WriteLine(x[i]);
             }
 
         }
