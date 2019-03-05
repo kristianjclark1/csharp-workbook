@@ -141,24 +141,27 @@ namespace Checkers
             {
                 if (y2 == y1 + 1 || y2 == y1 - 1 && x2 == x1 + WorB)
                 {
-                    Checker openSpace;
-                    openSpace = SelectChecker(x2, y2);
+                    Checker newSpot;
+                    newSpot = SelectChecker(x2, y2);
                     check.Position[0] = x2;
                     check.Position[1] = y2;
                     DrawBoard();
 
-                    if (openSpace != null)
+                    if (newSpot != null)
                     {
-                        if (check.Color == openSpace.Color)
+                        if (check.Color == newSpot.Color)
+                        //space taken by same color checker
+
                         {
                             System.Console.WriteLine("Space taken");
                             return;
                         }
-                        else if (check.Color != openSpace.Color)
+                        else if (check.Color != newSpot.Color)
+                        //space taken by checker not same color
                         {
                             check.Position[0] = (x2 - x1) + x2;
                             check.Position[1] = (y2 - y1) + y2;
-                            Checkers.Remove(openSpace);
+                            Checkers.Remove(newSpot);
                             System.Console.WriteLine("Eat the checker!");
                             DrawBoard();
 
