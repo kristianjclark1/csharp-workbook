@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
+
 
 namespace Files
 {
@@ -14,6 +16,7 @@ namespace Files
         static void Main(string[] args)
         {
             string textFile = string.Join("This is a Text File", args);
+            string textFile2 = string.Join("This is a Text File, and I can edit it", args);
 
 
 
@@ -27,13 +30,22 @@ namespace Files
 
             string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string documentName = "Simple way";
-            string docummentExtension = "txt";
+            string documentExtension = "txt";
             string fullPathtoFile = $"{documentsPath}/{documentName}.{documentExtension}";
 
-            #region I don't want you to copy paste this section...
+            using (FileStream fs1 = File.Create(fullPathtoFile)) ;
+            using (StreamWriter sw = new StreamWriter(fs1)) ;
+            {
+                sw.WriteLine(textFile2);
+            }
 
-            System.Console.WriteLine($"Press any key to close {documentName}.{documentExtension} file");
-            System.Console.ReadLine();
+            System.Console.WriteLine("Finished");
+            return fullPathtoFile;
+
+            // #region I don't want you to copy paste this section...
+
+            //  System.Console.WriteLine($"Press any key to close {documentName}.{documentExtension} file");
+            //  System.Console.ReadLine();
         }
     }
 }
