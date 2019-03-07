@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections;
+using System.Text;
 using System.IO;
+using System.Collections.Generic;
 
 
 namespace Files
@@ -15,37 +16,57 @@ namespace Files
 
         static void Main(string[] args)
         {
-            string textFile = string.Join("This is a Text File", args);
-            string textFile2 = string.Join("This is a Text File, and I can edit it", args);
-
-
-
-
-
-            Console.WriteLine("Hello World!");
-        }
-        private static void SimpleWay(string[] args)
-        {
-            string textToWrite = string.Join("", args);
-
-            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string documentName = "Simple way";
-            string documentExtension = "txt";
-            string fullPathtoFile = $"{documentsPath}/{documentName}.{documentExtension}";
-
-            using (FileStream fs1 = File.Create(fullPathtoFile)) ;
-            using (StreamWriter sw = new StreamWriter(fs1)) ;
+            string myFile = @"C:\Users\kristianclark\Desktop\myFile.txt";
+            using (StreamWriter sw = File.CreateText(myFile))
             {
-                sw.WriteLine(textFile2);
+                sw.WriteLine("This is a Text File");
+                sw.WriteLine("This is a Text File, and I can edit it");
+
             }
+            using (StreamReader sr = File.OpenText(myFile))
+            //prints file that was created(myFile)
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    System.Console.WriteLine(line);
+                }
+            }
+            System.Console.WriteLine();
 
-            System.Console.WriteLine("Finished");
-            return fullPathtoFile;
+            string editText = File.ReadAllText(@"C:\Users\kristianclark\Desktop\myFile.txt");
+            //created string to store data from my file
+            //preparing to edit text in my created file
+            editText = editText.Replace("and I can edit it", "and I love it");
+            File.WriteAllText(@"C:\Users\kristianclark\Desktop\myFile.txt", editText);
 
-            // #region I don't want you to copy paste this section...
-
-            //  System.Console.WriteLine($"Press any key to close {documentName}.{documentExtension} file");
-            //  System.Console.ReadLine();
+            using (StreamReader sr2 = File.OpenText(myFile))
+            //reprint console the created file with edits
+            {
+                string line;
+                while ((line = sr2.ReadLine()) != null)
+                {
+                    System.Console.WriteLine(line);
+                }
+            }
+            if (File.Exists(myFile))
+            //deletes my file
+            {
+                try
+                {
+                    File.Delete(myFile);
+                }
+                catch (Exception ex)
+                {
+                    System.Console.WriteLine(ex);
+                }
+            }
         }
+
+
+
+
     }
 }
+
+
