@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace GuessWords
 {
@@ -7,17 +8,18 @@ namespace GuessWords
     {
         static void Main(string[] args)
         {
-            string[] lines = File.ReadAllLines(@"C:\Users\kristianclark\Documents\words_alpha.txt");
-            Random rng = new Random();
-            int r = rng.Next(lines.Length);
-            //creates random number and selects word for that number from array
-            string compWord = lines[r];
+            string[] lines = File.ReadAllLines(@"/Users/kristianclark/csharp-workbook/GuessWords/words_alpha.txt");
 
-            System.Console.WriteLine("The word I picked is {0}", compWord);
+            Random rnd = new Random();
+            int r = rnd.Next(lines.Length);
+            //creates random number and selects word for that number from array
+            string myWord = lines[r];
+
+            System.Console.WriteLine("Please enter a word to see if it comes before or after the random word");
             string userGuess = Console.ReadLine();
-            int compNum = Array.IndexOf(lines, compWord);
             int userNum = Array.IndexOf(lines, userGuess);
-            //Console.WriteLine(userNum);
+            int compNum = Array.IndexOf(lines, myWord);
+
 
             while (compNum != userNum)
             {
@@ -36,8 +38,11 @@ namespace GuessWords
             if (compNum == userNum)
             {
                 Console.WriteLine("You Win!");
+
+
             }
             Console.WriteLine();
+
 
         }
     }
