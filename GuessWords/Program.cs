@@ -15,12 +15,10 @@ namespace GuessWords
             //creates random number and selects word for that number from array
             string myWord = lines[r];
 
-            System.Console.WriteLine("Guess my word and I will give you hints along the way");
+            System.Console.WriteLine("Please enter a word to see if it comes before or after the random word");
             string userGuess = Console.ReadLine();
             int userNum = Array.IndexOf(lines, userGuess);
             int compNum = Array.IndexOf(lines, myWord);
-
-            // System.Console.WriteLine("The word I picked is {0}", myWord);
 
 
             while (compNum != userNum)
