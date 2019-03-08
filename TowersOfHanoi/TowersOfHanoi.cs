@@ -10,14 +10,23 @@ namespace TowersOfHanoi
         static void Main(string[] args)
         {
             Game game = new Game();
-            game.PrintBoard();
-            game.AskMove();
-            game.PrintBoard();
-            game.AskMove();
+
+            bool win = false;
+
+            do
+            {
+                //Hasn't won yet
+                game.AskMove();
+                game.PrintBoard();
+                win = game.CheckForWin();
+            }
+            while (!win);
 
 
-
-
+            // game.PrintBoard();
+            // game.AskMove();
+            // game.PrintBoard();
+            // game.AskMove();
         }
     }
     class Block
