@@ -12,15 +12,16 @@ namespace TowersOfHanoi
             Game game = new Game();
 
             bool win = false;
-            while (!win)
-            //Hasn't won yet
-            {
 
-                game.PrintBoard();
+            do
+            {
+                //Hasn't won yet
                 game.AskMove();
-                game.CheckForWin();
+                game.PrintBoard();
+                win = game.CheckForWin();
             }
-            System.Console.WriteLine("You won!");
+            while (!win);
+
 
             // game.PrintBoard();
             // game.AskMove();
