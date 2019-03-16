@@ -1,10 +1,19 @@
 ﻿<Properties StartupConfiguration="{4FE8E19C-009D-45A0-A335-8F46528351C9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="MyTasks/Create.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyTasks/Program.cs">
     <Files>
       <File FileName="MyTasks/Program.cs" Line="3" Column="1" />
-      <File FileName="MyTasks/Create.cs" Line="1" Column="1" />
-      <File FileName="MyTasks/Update.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MyTasks" expanded="True">
+            <Node name="MyTasks" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.MyTasks FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
