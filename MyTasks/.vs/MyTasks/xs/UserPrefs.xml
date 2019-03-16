@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{4FE8E19C-009D-45A0-A335-8F46528351C9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyTasks/Program.cs">
+    <Files>
+      <File FileName="MyTasks/Program.cs" Line="49" Column="14" />
+      <File FileName="MyTasks/ToDoDbContext.cs" Line="17" Column="2" />
+      <File FileName="MyTasks/TaskList.cs" Line="37" Column="3" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MyTasks" expanded="True">
+            <Node name="MyTasks" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+                <Node name="SdkDependencies" expanded="True" />
+              </Node>
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.MyTasks PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/kristianclark/Projects/MyTasks/MyTasks/Delete.cs" relfile="MyTasks/Delete.cs" line="12" column="1" />
+      <Breakpoint file="/Users/kristianclark/Projects/MyTasks/MyTasks/Delete.cs" relfile="MyTasks/Delete.cs" line="18" column="1" />
+      <Breakpoint file="/Users/kristianclark/Projects/MyTasks/MyTasks/Delete.cs" relfile="MyTasks/Delete.cs" line="21" column="1" />
+      <Breakpoint file="/Users/kristianclark/Projects/MyTasks/MyTasks/Delete.cs" relfile="MyTasks/Delete.cs" line="27" column="1" />
+      <Breakpoint file="/Users/kristianclark/Projects/MyTasks/MyTasks/Delete.cs" relfile="MyTasks/Delete.cs" line="28" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
